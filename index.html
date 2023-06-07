@@ -2,42 +2,35 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Counter by Arrow-07</title>
+
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
   </style>
-  <script>
-    var y;
-  var x=0
-  function add(){
-    x++;
-    document.getElementById("demo").innerHTML = x;
-  }
-  function remove(){
-    x--;
-    document.getElementById("demo").innerHTML = x;
-  }
-  function reset(){
-    x=0;
-    document.getElementById("demo").innerHTML = x;
-  }
-  function set(){
-    do{
-      x = prompt("Set the value:")*1;
-      if (isNaN(x)){
-       alert("A NON-NUMERICAL VALUE HAS BEEN ENTERED, RETRY");
-      }else
-        document.getElementById("demo").innerHTML = x;
-    }while(isNaN(x));
-  }
-  function setname(){
-    y = prompt("Set the name of counter:");
-    document.getElementById("name").innerHTML = y.toUpperCase();
-  }
-  </script>
+
+  <script src="script.js"></script>
+
   <body>
+
+    <div class="dropdown">
+      <button class="dropbtn"><img src="./img.icons8.png" alt="Image"></button>
+      <div class="dropdown-content">
+        <label>
+          <input id= "check1" type="checkbox" onchange="handleCheckboxChange(this)"> When you reset the interval also resets
+        </label>
+        <label>
+          <input id= "check2" type="checkbox" onchange="handleCheckboxChange(this)"> When you reset the name also resets
+        </label>
+        <label>
+          <!--<input id= "check3" type="checkbox" onchange="handleCheckboxChange(this)"> -->
+        </label>
+      </div>
+    </div>
+
     <button class= "button name" type="button" id= "name" onclick="setname()">Counter by Arrow</button>
 
     <p id="demo" class= "counter" >0</p>
@@ -46,6 +39,8 @@
     <button class= "button remove" type="button" onclick="remove()">-</button>
     <button class= "button reset" type="button" onclick="reset()">Reset</button>
     <button class= "button set" type="button" onclick="set()">Set value</button>
+    <button class= "button interval" type="button" onclick="interval()">Set interval</button>
 
+    
   </body>
 </html>
